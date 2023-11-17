@@ -22,13 +22,10 @@ parameters:
 
 variables:
   tag: "$(Build.BuildId)"
-  imageRepository: "cccs/hogwarts/howler_client"
-  containerRegistry: "uchimera"
   branch: "$(Build.SourceBranchName)"
   repoName: "howler_client"
   isMaster: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
   isPrBranch: $[eq(variables['Build.SourceBranchName'], 'merge')]
-  isMyBranch: $[eq(variables['Build.SourceBranch'], 'refs/heads/develop')]
   pythonVersion: "3.9"
 
 pool: "stratus-build-pool.u"
@@ -36,17 +33,15 @@ pool: "stratus-build-pool.u"
 stages:
   - stage: test
     jobs:
-      - job: run_test
+      - job: Run_Python_Test
         strategy:
           matrix:
             python3_9:
               python.version: "3.9"
-            # Python3_10:
-            #   python.version: "3.10"
 
         steps:
           - task: UsePythonVersion@0
-            displayName: Set python version
+            displayName: Set Python Version
             inputs:
               versionSpec: "3.9"
           - script: |
@@ -66,9 +61,9 @@ stages:
               pytest -rsx -vv test/unit
             workingDirectory: $(Pipeline.Workspace)/s
             displayName: Test
-  - stage: Build_and_Publish_Python_Artifact
+  - stage: maven
     jobs:
-      - job: BuildPublishMavenArtifact
+      - job: Build_and_Publish_Maven_Artifact
         steps:
           - task: Maven@3
             displayName: "Build project with maven"
@@ -83,12 +78,14 @@ stages:
               testResultsFiles: "**/surefire-reports/TEST-*.xml"
               goals: "deploy"
               options: '-DskipITs=true'
-      - job: BuildPythonArtifact
+  - stage: python
+    jobs:
+      - job: Build_Python_Artifact
         workspace:
           clean: all
         steps:
           - task: UsePythonVersion@0
-            displayName: Set python version
+            displayName: Set Python Version
             inputs:
               versionSpec: "3.9"
           - script: |
@@ -101,7 +98,7 @@ stages:
               cat version.txt
               git config --global --add url."git@github.com:".insteadOf "https://github.com/"
               python setup.py bdist_wheel
-            displayName: "Install and Build."
+            displayName: Install and Build
           - task: CopyFiles@2
             inputs:
               targetFolder: $(Build.ArtifactStagingDirectory)
@@ -113,34 +110,23 @@ stages:
               publishLocation: "Container"
             displayName: Publish build artifacts
 
-      - job: PublishArtifactToFeed
-        dependsOn: BuildPythonArtifact
-        condition: or(eq(variables.isMaster, true), or(eq('${{ parameters.forceBuild }}', true), eq(variables.isMyBranch, true)))
+      - job: Publish_Artifact_To_Feed
+        dependsOn: Build_Python_Artifact
+        condition: or(eq(variables.isMaster, true), eq('${{ parameters.forceBuild }}', true))
         steps:
           - task: DownloadBuildArtifacts@0
             inputs:
               buildType: "current"
               downloadType: "specific"
               downloadPath: "$(Pipeline.Workspace)"
-            displayName: "Download build artifact."
+            displayName: "Download build artifact"
           - task: TwineAuthenticate@1
             inputs:
-              artifactFeed: cccs-stratus
+              pythonUploadServiceConnection: 'PyPI Analysis Support'
           - script: |
               virtualenv -p python$(pythonVersion) env
               source env/bin/activate
               pip install twine
-              python -m twine upload -r cccs-stratus --config-file $(PYPIRC_PATH) $(Pipeline.Workspace)/howler_client/*
-            displayName: "Publish artifact to cccs-stratus feed."
-          - script: |
-              virtualenv -p python$(pythonVersion) env
-              source env/bin/activate
-              pip install twine
-              python -m twine upload -r pypi-cccs --config-file /home/stratus/stratus-build-agent/pypirc/.pypirc $(Pipeline.Workspace)/howler_client/*
-            displayName: "Publish artifact to nexus-u feed."
-          - script: |
-              virtualenv -p python$(pythonVersion) env
-              source env/bin/activate
-              pip install twine
-              python -m twine upload -r pypi-ap --config-file /home/stratus/stratus-build-agent/pypirc/.pypirc $(Pipeline.Workspace)/howler_client/*
-            displayName: "Publish artifact to BagOfHolding feed."
+              cat $(PYPIRC_PATH)
+              python -m twine upload --non-interactive -r pypi --config-file $(PYPIRC_PATH) $(Pipeline.Workspace)/howler_client/*
+            displayName: "Publish artifact to PyPI feed"

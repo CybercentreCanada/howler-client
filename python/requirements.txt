@@ -2,4 +2,4 @@ pycryptodome
 requests
 requests[security]
 python-baseconv
-hogwarts-auth
+

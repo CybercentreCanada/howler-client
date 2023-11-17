@@ -24,13 +24,15 @@ requirements = read("requirements.txt").splitlines()
 setup(
     name="howler-client",
     version=readVersion(),
-    description="howler v1 client library",
+    author="Analysis Support",
+    author_email="analysis-development@cyber.gc.ca",
+    maintainer="Analysis Support",
+    maintainer_email="analysis-development@cyber.gc.ca",
+    description="Howler Client Python Library",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="MIT",
     url="https://github.com/CybercentreCanada/howler-client",
-    author="CSE-CST howler development team",
-    author_email="howler@cyber.gc.ca",
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -40,7 +42,7 @@ setup(
         "Programming Language :: Python :: 3.9",
     ],
     install_requires=requirements,
-    extras_require={"test": ["pytest", "pytest-cov", "cart", "passlib", "howler-api"]},
+    extras_require={"test": ["pytest", "pytest-cov", "cart", "passlib"]},
     keywords="development howler client gc canada cse-cst cse cst",
     packages=find_packages(exclude=["test/*"]),
 )

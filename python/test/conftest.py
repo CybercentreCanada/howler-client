@@ -24,11 +24,6 @@ def skip_or_fail(message):
 
 @pytest.fixture(scope="module")
 def client():
-    if not os.getenv("VAULT_REFRESH_TOKEN"):
-        c = get_client(
-            UI_HOST, apikey=("admin", "devkey:admin"), verify=False, retries=1
-        )
-    else:
-        c = get_client(UI_HOST, verify=False, retries=1)
+    c = get_client(UI_HOST, apikey=("admin", "devkey:admin"), verify=False, retries=1)
 
     return c

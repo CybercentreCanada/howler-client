@@ -5,7 +5,6 @@ import time
 import warnings
 
 import requests
-from hogwarts.auth.vault.credentials import DiscoveryTokenCredential
 
 from howler_client.common.utils import ClientError
 from howler_client.logger import get_logger
@@ -66,14 +65,7 @@ class Connection(object):
                     "Authorization": f"Basic {base64.b64encode(':'.join(apikey).encode('utf-8')).decode('utf-8')}"
                 }
             )
-        else:
-            LOGGER.info("Using OAuth Authentication")
 
-            # TODO: Make this better
-            cred = DiscoveryTokenCredential("howler")
-            token = cred.get_token().token
-
-            session.headers.update({"Authorization": f"Bearer {token}"})
 
         session.verify = verify
 

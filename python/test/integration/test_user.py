@@ -65,7 +65,7 @@ def test_list(client):
 def test_update(client):
     new_name = "new user name"
 
-    user_id = "user" if not os.getenv("VAULT_REFRESH_TOKEN") else "goose"
+    user_id = "user"
     user_data = client.user(user_id)
     assert user_data is not None
 
@@ -90,6 +90,4 @@ def test_whoami(client):
         "username",
     }.issubset(set(res.keys()))
 
-    # OAuth vs non-OAuth answers
-    assert os.getenv("VAULT_REFRESH_TOKEN") or res["username"] == "admin"
-    assert not os.getenv("VAULT_REFRESH_TOKEN") or res["username"] == "goose"
+    assert res["username"] == "admin"

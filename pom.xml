@@ -1,9 +1,35 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>cccs.hogwarts.howler</groupId>
-  <artifactId>hogwarts-howler</artifactId>
+  <groupId>io.github.cybercentrecanada</groupId>
+  <artifactId>howler-client</artifactId>
   <version>1.6.0-SNAPSHOT</version>
-  <name>hogwarts-howler</name>
+  <name>howler-client</name>
+  <description>A Java library to aid interaction with Howler.</description>
+  <url>https://github.com/CybercentreCanada/howler-client</url>
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+  <scm>
+    <connection>scm:git:git@github.com:CybercentreCanada/howler-client.git</connection>
+    <developerConnection>scm:git:https://github.com/CybercentreCanada/howler-client.git</developerConnection>
+    <url>scm:git:git@github.com:CybercentreCanada/howler-client.git</url>
+    <tag>HEAD</tag>
+  </scm>
+  <organization>
+    <name>Canadian Centre for Cyber Security</name>
+    <url>https://www.cyber.gc.ca/</url>
+  </organization>
+  <developers>
+    <developer>
+      <name>Analysis Support</name>
+      <email>analysis-development@cyber.gc.ca</email>
+      <organization>Canadian Centre for Cyber Security</organization>
+      <organizationUrl>https://www.cyber.gc.ca/</organizationUrl>
+    </developer>
+  </developers>
   <properties>
     <java.version>11</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -14,11 +40,6 @@
     <skipUTs>${skipTests}</skipUTs>
   </properties>
   <dependencies>
-    <dependency>
-      <groupId>cccs.hogwarts</groupId>
-      <artifactId>hogwarts-vault</artifactId>
-      <version>1.8.0</version>
-    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -96,9 +117,13 @@
     </dependency>
   </dependencies>
   <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
     <repository>
-      <id>cccs-stratus</id>
-      <url>https://pkgs.dev.azure.com/cccs-stratus/_packaging/cccs-stratus/maven/v1</url>
+      <id>ossrh</id>
+      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>
   <repositories>
@@ -162,6 +187,51 @@
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
         <version>3.7.1</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.2.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.7</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>ossrh</serverId>
+          <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.5</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+            <configuration>
+              <gpgArguments>
+                <arg>--pinentry-mode</arg>
+                <arg>loopback</arg>
+              </gpgArguments>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
