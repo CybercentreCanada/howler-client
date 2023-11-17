@@ -1,0 +1,146 @@
+trigger:
+  branches:
+    include:
+      - main
+      - develop
+      - rc/*
+      - patch/*
+
+pr:
+  branches:
+    include:
+      - main
+      - develop
+      - rc/*
+      - patch/*
+
+parameters:
+  - name: forceBuild
+    displayName: Force build Python artifact and push to feed
+    type: boolean
+    default: false
+
+variables:
+  tag: "$(Build.BuildId)"
+  imageRepository: "cccs/hogwarts/howler_client"
+  containerRegistry: "uchimera"
+  branch: "$(Build.SourceBranchName)"
+  repoName: "howler_client"
+  isMaster: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
+  isPrBranch: $[eq(variables['Build.SourceBranchName'], 'merge')]
+  isMyBranch: $[eq(variables['Build.SourceBranch'], 'refs/heads/develop')]
+  pythonVersion: "3.9"
+
+pool: "stratus-build-pool.u"
+
+stages:
+  - stage: test
+    jobs:
+      - job: run_test
+        strategy:
+          matrix:
+            python3_9:
+              python.version: "3.9"
+            # Python3_10:
+            #   python.version: "3.10"
+
+        steps:
+          - task: UsePythonVersion@0
+            displayName: Set python version
+            inputs:
+              versionSpec: "3.9"
+          - script: |
+              cd python
+              python -m venv venv
+              . ./venv/bin/activate
+              python -m pip install --upgrade pip
+              python -m pip install --no-cache-dir -e .
+
+              python -m pip install --no-cache-dir -r test/requirements.txt
+            displayName: Install howler-client
+            workingDirectory: $(Pipeline.Workspace)/s
+          - script: |
+              cd python
+              . ./venv/bin/activate
+              python -m howler.app &
+              pytest -rsx -vv test/unit
+            workingDirectory: $(Pipeline.Workspace)/s
+            displayName: Test
+  - stage: Build_and_Publish_Python_Artifact
+    jobs:
+      - job: BuildPublishMavenArtifact
+        steps:
+          - task: Maven@3
+            displayName: "Build project with maven"
+            inputs:
+              mavenPomFile: "pom.xml"
+              mavenOptions: "-Xmx3072m"
+              javaHomeOption: "path"
+              jdkVersionOption: "1.11"
+              jdkArchitectureOption: "x64"
+              jdkDirectory: "/usr/lib/jvm/java-11-openjdk-amd64"
+              publishJUnitResults: true
+              testResultsFiles: "**/surefire-reports/TEST-*.xml"
+              goals: "deploy"
+              options: '-DskipITs=true'
+      - job: BuildPythonArtifact
+        workspace:
+          clean: all
+        steps:
+          - task: UsePythonVersion@0
+            displayName: Set python version
+            inputs:
+              versionSpec: "3.9"
+          - script: |
+              cd python
+              virtualenv -p python$(pythonVersion) env
+              source env/bin/activate
+              pip install wheel
+              pip install -r requirements.txt
+              echo '.$(tag)' >> version.txt
+              cat version.txt
+              git config --global --add url."git@github.com:".insteadOf "https://github.com/"
+              python setup.py bdist_wheel
+            displayName: "Install and Build."
+          - task: CopyFiles@2
+            inputs:
+              targetFolder: $(Build.ArtifactStagingDirectory)
+            displayName: "Stage build artifact to publish"
+          - task: PublishBuildArtifacts@1
+            inputs:
+              pathtoPublish: "$(Build.ArtifactStagingDirectory)/python/dist"
+              artifactName: "howler_client"
+              publishLocation: "Container"
+            displayName: Publish build artifacts
+
+      - job: PublishArtifactToFeed
+        dependsOn: BuildPythonArtifact
+        condition: or(eq(variables.isMaster, true), or(eq('${{ parameters.forceBuild }}', true), eq(variables.isMyBranch, true)))
+        steps:
+          - task: DownloadBuildArtifacts@0
+            inputs:
+              buildType: "current"
+              downloadType: "specific"
+              downloadPath: "$(Pipeline.Workspace)"
+            displayName: "Download build artifact."
+          - task: TwineAuthenticate@1
+            inputs:
+              artifactFeed: cccs-stratus
+          - script: |
+              virtualenv -p python$(pythonVersion) env
+              source env/bin/activate
+              pip install twine
+              python -m twine upload -r cccs-stratus --config-file $(PYPIRC_PATH) $(Pipeline.Workspace)/howler_client/*
+            displayName: "Publish artifact to cccs-stratus feed."
+          - script: |
+              virtualenv -p python$(pythonVersion) env
+              source env/bin/activate
+              pip install twine
+              python -m twine upload -r pypi-cccs --config-file /home/stratus/stratus-build-agent/pypirc/.pypirc $(Pipeline.Workspace)/howler_client/*
+            displayName: "Publish artifact to nexus-u feed."
+          - script: |
+              virtualenv -p python$(pythonVersion) env
+              source env/bin/activate
+              pip install twine
+              python -m twine upload -r pypi-ap --config-file /home/stratus/stratus-build-agent/pypirc/.pypirc $(Pipeline.Workspace)/howler_client/*
+            displayName: "Publish artifact to BagOfHolding feed."

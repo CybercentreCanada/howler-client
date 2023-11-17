@@ -1,0 +1,47 @@
+package cccs.hogwarts.howler.models.generated;
+
+import cccs.hogwarts.howler.models.Field;
+import cccs.hogwarts.howler.models.GeneratedModel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import lombok.Data;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * NOTE: This is an auto-generated file. Don't edit this manually.
+ */
+@Data
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class CodeSignatureModel implements GeneratedModel {
+  String digestAlgorithm;
+  Boolean exists;
+  String signingId;
+  String status;
+  String subjectName;
+  String teamId;
+  String timestamp;
+  Boolean trusted;
+  Boolean valid;
+
+  @Override
+  @JsonIgnore
+  public List<Field> getFields() {
+    return List.of(
+      new Field("digest_algorithm", digestAlgorithm, "String"),
+      new Field("exists", exists, "Boolean"),
+      new Field("signing_id", signingId, "String"),
+      new Field("status", status, "String"),
+      new Field("subject_name", subjectName, "String"),
+      new Field("team_id", teamId, "String"),
+      new Field("timestamp", timestamp, "String"),
+      new Field("trusted", trusted, "Boolean"),
+      new Field("valid", valid, "Boolean")
+    );
+  }
+}

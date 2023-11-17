@@ -1,0 +1,65 @@
+{
+    "git.enableCommitSigning": true,
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        120
+    ],
+    "editor.tabSize": 4,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "python.formatting.autopep8Args": [
+        "--max-line-length",
+        "120",
+        "--experimental"
+    ],
+    "python.formatting.provider": "none",
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=120",
+        "--extend-ignore=E203"
+    ],
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/build": true,
+        "**/.pytest_cache": true,
+        "**/.idea": true,
+        "**/__pycache__": true,
+        "**/howler_api.egg-info": true,
+    },
+    "npm.packageManager": "yarn",
+    "python.linting.pylintEnabled": false,
+    "python.terminal.activateEnvironment": false,
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestPath": ".",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+    "autoDocstring.docstringFormat": "google",
+    "autoDocstring.guessTypes": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+        "source.fixAll": true
+    },
+    "python.linting.ignorePatterns": [
+        "**/site-packages/**/*.py",
+        ".vscode/*.py",
+        "env/**/*.py"
+    ],
+    "python.linting.mypyPath": "env/bin/mypy",
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyCategorySeverity.error": "Information",
+    "python.linting.mypyCategorySeverity.note": "Hint",
+    "python.defaultInterpreterPath": "${workspaceFolder}/env/bin/python",
+    "git.openRepositoryInParentFolders": "always",
+    "files.watcherExclude": {
+        "**/target": true
+    }
+}
