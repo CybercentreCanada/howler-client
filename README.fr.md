@@ -1,16 +1,16 @@
-# Howler Client Library
+# Bibliothèque client de Howler
 
-The Howler client library facilitates issuing requests to Howler.
+La bibliothèque client Howler facilite l'émission de requêtes à Howler.
 
-## Running the Tests
+## Exécution des tests
 
-1. Prepare the howler-api:
-    1. Start dependencies
+1. Préparez l'interface howler-api :
+    1. Démarrer les dépendances
     1. `howler-api > python howler/app.py`
     1. `howler-api > python howler/odm/random_data.py`
-2. Run Java integration tests:
+2. Exécutez les tests d'intégration Java :
     1. `howler-client > mvn verify`
-3. Run python integration tests:
+3. Exécuter les tests d'intégration python :
     1. `howler-client/python > python -m venv env`
     1. `howler-client/python > . env/bin/activate`
     1. `howler-client/python > pip install -r requirements.txt`

@@ -26,7 +26,8 @@ public class OrganizationModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("id", id, "String"),
-        new Field("organizational_unit", organizationalUnit, "String"));
+      new Field("id", id, "String"),
+      new Field("organizational_unit", organizationalUnit, "String")
+    );
   }
 }

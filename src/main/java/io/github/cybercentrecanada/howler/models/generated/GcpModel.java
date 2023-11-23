@@ -29,10 +29,11 @@ public class GcpModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("network_id", networkId, "String"),
-        new Field("project_id", projectId, "String"),
-        new Field("resource_id", resourceId, "String"),
-        new Field("service_account_id", serviceAccountId, "String"),
-        new Field("zone", zone, "String"));
+      new Field("network_id", networkId, "String"),
+      new Field("project_id", projectId, "String"),
+      new Field("resource_id", resourceId, "String"),
+      new Field("service_account_id", serviceAccountId, "String"),
+      new Field("zone", zone, "String")
+    );
   }
 }

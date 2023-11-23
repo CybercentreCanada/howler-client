@@ -26,7 +26,8 @@ public class LocationModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("lat", lat, "Double"),
-        new Field("lon", lon, "Double"));
+      new Field("lat", lat, "Double"),
+      new Field("lon", lon, "Double")
+    );
   }
 }

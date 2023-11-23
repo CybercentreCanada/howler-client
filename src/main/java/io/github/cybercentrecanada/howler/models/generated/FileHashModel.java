@@ -31,12 +31,13 @@ public class FileHashModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("md5", md5, "String"),
-        new Field("sha1", sha1, "String"),
-        new Field("sha256", sha256, "String"),
-        new Field("sha384", sha384, "String"),
-        new Field("sha512", sha512, "String"),
-        new Field("ssdeep", ssdeep, "String"),
-        new Field("tlsh", tlsh, "String"));
+      new Field("md5", md5, "String"),
+      new Field("sha1", sha1, "String"),
+      new Field("sha256", sha256, "String"),
+      new Field("sha384", sha384, "String"),
+      new Field("sha512", sha512, "String"),
+      new Field("ssdeep", ssdeep, "String"),
+      new Field("tlsh", tlsh, "String")
+    );
   }
 }

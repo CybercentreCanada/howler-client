@@ -29,10 +29,11 @@ public class AzureModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("resource_group", resourceGroup, "String"),
-        new Field("resource_id", resourceId, "String"),
-        new Field("subscription_id", subscriptionId, "String"),
-        new Field("tenant_id", tenantId, "String"),
-        new Field("upn", upn, "String"));
+      new Field("resource_group", resourceGroup, "String"),
+      new Field("resource_id", resourceId, "String"),
+      new Field("subscription_id", subscriptionId, "String"),
+      new Field("tenant_id", tenantId, "String"),
+      new Field("upn", upn, "String")
+    );
   }
 }

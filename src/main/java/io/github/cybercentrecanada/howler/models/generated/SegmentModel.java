@@ -33,14 +33,15 @@ public class SegmentModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("chi2", chi2, "Integer"),
-        new Field("entropy", entropy, "Integer"),
-        new Field("flags", flags, "String"),
-        new Field("name", name, "String"),
-        new Field("physical_offset", physicalOffset, "String"),
-        new Field("physical_size", physicalSize, "Integer"),
-        new Field("type", type, "String"),
-        new Field("virtual_address", virtualAddress, "Integer"),
-        new Field("virtual_size", virtualSize, "Integer"));
+      new Field("chi2", chi2, "Integer"),
+      new Field("entropy", entropy, "Integer"),
+      new Field("flags", flags, "String"),
+      new Field("name", name, "String"),
+      new Field("physical_offset", physicalOffset, "String"),
+      new Field("physical_size", physicalSize, "Integer"),
+      new Field("type", type, "String"),
+      new Field("virtual_address", virtualAddress, "Integer"),
+      new Field("virtual_size", virtualSize, "Integer")
+    );
   }
 }

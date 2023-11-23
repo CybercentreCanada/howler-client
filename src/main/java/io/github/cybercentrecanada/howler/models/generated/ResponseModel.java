@@ -28,9 +28,10 @@ public class ResponseModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("body", body != null ? body.getFields() : null, "Class"),
-        new Field("bytes", bytes, "Integer"),
-        new Field("mime_type", mimeType, "String"),
-        new Field("status_code", statusCode, "Integer"));
+      new Field("body", body != null ? body.getFields() : null, "Class"),
+      new Field("bytes", bytes, "Integer"),
+      new Field("mime_type", mimeType, "String"),
+      new Field("status_code", statusCode, "Integer")
+    );
   }
 }

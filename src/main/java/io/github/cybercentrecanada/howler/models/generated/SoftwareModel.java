@@ -30,11 +30,12 @@ public class SoftwareModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("alias", alias, "List<String>"),
-        new Field("id", id, "String"),
-        new Field("name", name, "String"),
-        new Field("platform", platform, "List<String>"),
-        new Field("reference", reference, "String"),
-        new Field("type", type, "String"));
+      new Field("alias", alias, "List<String>"),
+      new Field("id", id, "String"),
+      new Field("name", name, "String"),
+      new Field("platform", platform, "List<String>"),
+      new Field("reference", reference, "String"),
+      new Field("type", type, "String")
+    );
   }
 }

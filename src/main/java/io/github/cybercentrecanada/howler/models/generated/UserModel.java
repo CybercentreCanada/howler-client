@@ -26,7 +26,8 @@ public class UserModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("id", id, "String"),
-        new Field("name", name, "String"));
+      new Field("id", id, "String"),
+      new Field("name", name, "String")
+    );
   }
 }

@@ -29,10 +29,11 @@ public class UserAgentModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("device", device != null ? device.getFields() : null, "Class"),
-        new Field("name", name, "String"),
-        new Field("original", original, "String"),
-        new Field("os", os != null ? os.getFields() : null, "Class"),
-        new Field("version", version, "String"));
+      new Field("device", device != null ? device.getFields() : null, "Class"),
+      new Field("name", name, "String"),
+      new Field("original", original, "String"),
+      new Field("os", os != null ? os.getFields() : null, "Class"),
+      new Field("version", version, "String")
+    );
   }
 }

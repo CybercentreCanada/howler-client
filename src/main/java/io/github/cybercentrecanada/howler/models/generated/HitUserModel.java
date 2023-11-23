@@ -32,13 +32,14 @@ public class HitUserModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("domain", domain, "String"),
-        new Field("email", email, "String"),
-        new Field("full_name", fullName, "String"),
-        new Field("group", group != null ? group.getFields() : null, "Class"),
-        new Field("hash", hash, "String"),
-        new Field("id", id, "String"),
-        new Field("name", name, "String"),
-        new Field("roles", roles, "List<String>"));
+      new Field("domain", domain, "String"),
+      new Field("email", email, "String"),
+      new Field("full_name", fullName, "String"),
+      new Field("group", group != null ? group.getFields() : null, "Class"),
+      new Field("hash", hash, "String"),
+      new Field("id", id, "String"),
+      new Field("name", name, "String"),
+      new Field("roles", roles, "List<String>")
+    );
   }
 }

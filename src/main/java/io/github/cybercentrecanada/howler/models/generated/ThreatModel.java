@@ -31,12 +31,13 @@ public class ThreatModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("feed", feed != null ? feed.getFields() : null, "Class"),
-        new Field("framework", framework, "String"),
-        new Field("group", group != null ? group.getFields() : null, "Class"),
-        new Field("indicator", indicator != null ? indicator.getFields() : null, "Class"),
-        new Field("software", software != null ? software.getFields() : null, "Class"),
-        new Field("tactic", tactic != null ? tactic.getFields() : null, "Class"),
-        new Field("technique", technique != null ? technique.getFields() : null, "Class"));
+      new Field("feed", feed != null ? feed.getFields() : null, "Class"),
+      new Field("framework", framework, "String"),
+      new Field("group", group != null ? group.getFields() : null, "Class"),
+      new Field("indicator", indicator != null ? indicator.getFields() : null, "Class"),
+      new Field("software", software != null ? software.getFields() : null, "Class"),
+      new Field("tactic", tactic != null ? tactic.getFields() : null, "Class"),
+      new Field("technique", technique != null ? technique.getFields() : null, "Class")
+    );
   }
 }

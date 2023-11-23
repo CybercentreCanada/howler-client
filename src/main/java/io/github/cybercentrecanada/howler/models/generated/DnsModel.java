@@ -32,13 +32,14 @@ public class DnsModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("answers", answers, "List<Class>"),
-        new Field("header_flags", headerFlags, "List<String>"),
-        new Field("id", id, "String"),
-        new Field("op_code", opCode, "String"),
-        new Field("question", question != null ? question.getFields() : null, "Class"),
-        new Field("resolved_ip", resolvedIp, "List<String>"),
-        new Field("response_code", responseCode, "String"),
-        new Field("type", type, "String"));
+      new Field("answers", answers, "List<Class>"),
+      new Field("header_flags", headerFlags, "List<String>"),
+      new Field("id", id, "String"),
+      new Field("op_code", opCode, "String"),
+      new Field("question", question != null ? question.getFields() : null, "Class"),
+      new Field("resolved_ip", resolvedIp, "List<String>"),
+      new Field("response_code", responseCode, "String"),
+      new Field("type", type, "String")
+    );
   }
 }

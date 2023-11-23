@@ -33,14 +33,15 @@ public class ParentModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("bcc", bcc != null ? bcc.getFields() : null, "Class"),
-        new Field("cc", cc != null ? cc.getFields() : null, "Class"),
-        new Field("destination", destination, "String"),
-        new Field("from", from != null ? from.getFields() : null, "Class"),
-        new Field("message_id", messageId, "String"),
-        new Field("origination_timestamp", originationTimestamp, "String"),
-        new Field("source", source, "String"),
-        new Field("subject", subject, "String"),
-        new Field("to", to != null ? to.getFields() : null, "Class"));
+      new Field("bcc", bcc != null ? bcc.getFields() : null, "Class"),
+      new Field("cc", cc != null ? cc.getFields() : null, "Class"),
+      new Field("destination", destination, "String"),
+      new Field("from", from != null ? from.getFields() : null, "Class"),
+      new Field("message_id", messageId, "String"),
+      new Field("origination_timestamp", originationTimestamp, "String"),
+      new Field("source", source, "String"),
+      new Field("subject", subject, "String"),
+      new Field("to", to != null ? to.getFields() : null, "Class")
+    );
   }
 }

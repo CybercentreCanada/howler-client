@@ -33,14 +33,15 @@ public class SourceModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("address", address, "String"),
-        new Field("bytes", bytes, "Integer"),
-        new Field("domain", domain, "String"),
-        new Field("geo", geo != null ? geo.getFields() : null, "Class"),
-        new Field("ip", ip, "String"),
-        new Field("mac", mac, "String"),
-        new Field("nat", nat != null ? nat.getFields() : null, "Class"),
-        new Field("packets", packets, "Integer"),
-        new Field("port", port, "Integer"));
+      new Field("address", address, "String"),
+      new Field("bytes", bytes, "Integer"),
+      new Field("domain", domain, "String"),
+      new Field("geo", geo != null ? geo.getFields() : null, "Class"),
+      new Field("ip", ip, "String"),
+      new Field("mac", mac, "String"),
+      new Field("nat", nat != null ? nat.getFields() : null, "Class"),
+      new Field("packets", packets, "Integer"),
+      new Field("port", port, "Integer")
+    );
   }
 }

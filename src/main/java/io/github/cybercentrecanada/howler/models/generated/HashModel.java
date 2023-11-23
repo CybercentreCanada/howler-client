@@ -25,6 +25,7 @@ public class HashModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("all", all, "List<String>"));
+      new Field("all", all, "List<String>")
+    );
   }
 }

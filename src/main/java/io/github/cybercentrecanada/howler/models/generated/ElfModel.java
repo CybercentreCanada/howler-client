@@ -35,16 +35,17 @@ public class ElfModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("architecture", architecture, "String"),
-        new Field("byte_order", byteOrder, "String"),
-        new Field("cpu_type", cpuType, "String"),
-        new Field("creation_date", creationDate, "String"),
-        new Field("exports", exports, "List<String>"),
-        new Field("header", header != null ? header.getFields() : null, "Class"),
-        new Field("imports", imports, "List<String>"),
-        new Field("sections", sections, "List<Class>"),
-        new Field("segments", segments, "List<Class>"),
-        new Field("shared_libraries", sharedLibraries, "List<String>"),
-        new Field("telfhash", telfhash, "String"));
+      new Field("architecture", architecture, "String"),
+      new Field("byte_order", byteOrder, "String"),
+      new Field("cpu_type", cpuType, "String"),
+      new Field("creation_date", creationDate, "String"),
+      new Field("exports", exports, "List<String>"),
+      new Field("header", header != null ? header.getFields() : null, "Class"),
+      new Field("imports", imports, "List<String>"),
+      new Field("sections", sections, "List<Class>"),
+      new Field("segments", segments, "List<Class>"),
+      new Field("shared_libraries", sharedLibraries, "List<String>"),
+      new Field("telfhash", telfhash, "String")
+    );
   }
 }

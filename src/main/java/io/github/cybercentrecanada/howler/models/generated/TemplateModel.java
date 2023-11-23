@@ -30,11 +30,12 @@ public class TemplateModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("analytic", analytic, "String"),
-        new Field("detection", detection, "String"),
-        new Field("keys", keys, "List<String>"),
-        new Field("owner", owner, "String"),
-        new Field("template_id", templateId, "String"),
-        new Field("type", type, "String"));
+      new Field("analytic", analytic, "String"),
+      new Field("detection", detection, "String"),
+      new Field("keys", keys, "List<String>"),
+      new Field("owner", owner, "String"),
+      new Field("template_id", templateId, "String"),
+      new Field("type", type, "String")
+    );
   }
 }

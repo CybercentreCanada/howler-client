@@ -19,7 +19,7 @@ import java.util.Map;
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AnswerModel implements GeneratedModel {
-  @JsonProperty("class")
+    @JsonProperty("class")
   String klass;
   String data;
   String name;
@@ -30,10 +30,11 @@ public class AnswerModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("class", klass, "String"),
-        new Field("data", data, "String"),
-        new Field("name", name, "String"),
-        new Field("ttl", ttl, "Integer"),
-        new Field("type", type, "String"));
+      new Field("class", klass, "String"),
+      new Field("data", data, "String"),
+      new Field("name", name, "String"),
+      new Field("ttl", ttl, "Integer"),
+      new Field("type", type, "String")
+    );
   }
 }

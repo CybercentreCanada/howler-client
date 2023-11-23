@@ -25,6 +25,7 @@ public class AttachmentModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("file", file != null ? file.getFields() : null, "Class"));
+      new Field("file", file != null ? file.getFields() : null, "Class")
+    );
   }
 }

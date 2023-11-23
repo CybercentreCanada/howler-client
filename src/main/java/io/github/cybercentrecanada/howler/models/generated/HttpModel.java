@@ -27,8 +27,9 @@ public class HttpModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("request", request != null ? request.getFields() : null, "Class"),
-        new Field("response", response != null ? response.getFields() : null, "Class"),
-        new Field("version", version, "String"));
+      new Field("request", request != null ? request.getFields() : null, "Class"),
+      new Field("response", response != null ? response.getFields() : null, "Class"),
+      new Field("version", version, "String")
+    );
   }
 }

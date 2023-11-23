@@ -33,14 +33,15 @@ public class CodeSignatureModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("digest_algorithm", digestAlgorithm, "String"),
-        new Field("exists", exists, "Boolean"),
-        new Field("signing_id", signingId, "String"),
-        new Field("status", status, "String"),
-        new Field("subject_name", subjectName, "String"),
-        new Field("team_id", teamId, "String"),
-        new Field("timestamp", timestamp, "String"),
-        new Field("trusted", trusted, "Boolean"),
-        new Field("valid", valid, "Boolean"));
+      new Field("digest_algorithm", digestAlgorithm, "String"),
+      new Field("exists", exists, "Boolean"),
+      new Field("signing_id", signingId, "String"),
+      new Field("status", status, "String"),
+      new Field("subject_name", subjectName, "String"),
+      new Field("team_id", teamId, "String"),
+      new Field("timestamp", timestamp, "String"),
+      new Field("trusted", trusted, "Boolean"),
+      new Field("valid", valid, "Boolean")
+    );
   }
 }

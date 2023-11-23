@@ -27,8 +27,9 @@ public class ImageModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("hash", hash != null ? hash.getFields() : null, "Class"),
-        new Field("name", name, "String"),
-        new Field("tag", tag, "List<String>"));
+      new Field("hash", hash != null ? hash.getFields() : null, "Class"),
+      new Field("name", name, "String"),
+      new Field("tag", tag, "List<String>")
+    );
   }
 }

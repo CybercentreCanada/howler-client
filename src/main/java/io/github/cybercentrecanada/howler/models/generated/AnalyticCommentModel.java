@@ -31,12 +31,13 @@ public class AnalyticCommentModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("detection", detection, "String"),
-        new Field("id", id, "String"),
-        new Field("modified", modified, "String"),
-        new Field("reactions", reactions, "Map<String, String>"),
-        new Field("timestamp", timestamp, "String"),
-        new Field("user", user, "String"),
-        new Field("value", value, "String"));
+      new Field("detection", detection, "String"),
+      new Field("id", id, "String"),
+      new Field("modified", modified, "String"),
+      new Field("reactions", reactions, "Map<String, String>"),
+      new Field("timestamp", timestamp, "String"),
+      new Field("user", user, "String"),
+      new Field("value", value, "String")
+    );
   }
 }

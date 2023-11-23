@@ -26,7 +26,8 @@ public class TriggerModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("request_id", requestId, "String"),
-        new Field("type", type, "String"));
+      new Field("request_id", requestId, "String"),
+      new Field("type", type, "String")
+    );
   }
 }

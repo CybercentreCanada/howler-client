@@ -25,6 +25,7 @@ public class EcsModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("version", version, "String"));
+      new Field("version", version, "String")
+    );
   }
 }

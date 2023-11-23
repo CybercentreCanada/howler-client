@@ -25,6 +25,7 @@ public class MachineModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("type", type, "String"));
+      new Field("type", type, "String")
+    );
   }
 }

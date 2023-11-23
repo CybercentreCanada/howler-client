@@ -30,11 +30,12 @@ public class AnalyticModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("analytic_id", analyticId, "String"),
-        new Field("comment", comment, "List<Class>"),
-        new Field("description", description, "String"),
-        new Field("detections", detections, "List<String>"),
-        new Field("name", name, "String"),
-        new Field("notebooks", notebooks, "List<Class>"));
+      new Field("analytic_id", analyticId, "String"),
+      new Field("comment", comment, "List<Class>"),
+      new Field("description", description, "String"),
+      new Field("detections", detections, "List<String>"),
+      new Field("name", name, "String"),
+      new Field("notebooks", notebooks, "List<Class>")
+    );
   }
 }

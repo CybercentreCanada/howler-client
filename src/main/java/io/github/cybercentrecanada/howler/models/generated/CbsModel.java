@@ -25,6 +25,7 @@ public class CbsModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("sharepoint", sharepoint != null ? sharepoint.getFields() : null, "Class"));
+      new Field("sharepoint", sharepoint != null ? sharepoint.getFields() : null, "Class")
+    );
   }
 }

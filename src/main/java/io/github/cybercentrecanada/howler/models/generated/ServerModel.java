@@ -27,8 +27,9 @@ public class ServerModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("address", address, "String"),
-        new Field("domain", domain, "String"),
-        new Field("ip", ip, "String"));
+      new Field("address", address, "String"),
+      new Field("domain", domain, "String"),
+      new Field("ip", ip, "String")
+    );
   }
 }

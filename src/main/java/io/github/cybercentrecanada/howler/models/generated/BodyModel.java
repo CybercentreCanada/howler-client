@@ -26,7 +26,8 @@ public class BodyModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("bytes", bytes, "Integer"),
-        new Field("content", content, "String"));
+      new Field("bytes", bytes, "Integer"),
+      new Field("content", content, "String")
+    );
   }
 }

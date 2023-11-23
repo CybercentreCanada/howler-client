@@ -32,13 +32,14 @@ public class LogModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("explanation", explanation, "String"),
-        new Field("key", key, "String"),
-        new Field("new_value", newValue, "String"),
-        new Field("previous_value", previousValue, "String"),
-        new Field("previous_version", previousVersion, "String"),
-        new Field("timestamp", timestamp, "String"),
-        new Field("type", type, "String"),
-        new Field("user", user, "String"));
+      new Field("explanation", explanation, "String"),
+      new Field("key", key, "String"),
+      new Field("new_value", newValue, "String"),
+      new Field("previous_value", previousValue, "String"),
+      new Field("previous_version", previousVersion, "String"),
+      new Field("timestamp", timestamp, "String"),
+      new Field("type", type, "String"),
+      new Field("user", user, "String")
+    );
   }
 }

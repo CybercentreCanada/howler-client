@@ -29,10 +29,11 @@ public class ContainerModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("id", id, "String"),
-        new Field("image", image != null ? image.getFields() : null, "Class"),
-        new Field("labels", labels, "Map<String, String>"),
-        new Field("name", name, "String"),
-        new Field("runtime", runtime, "String"));
+      new Field("id", id, "String"),
+      new Field("image", image != null ? image.getFields() : null, "Class"),
+      new Field("labels", labels, "Map<String, String>"),
+      new Field("name", name, "String"),
+      new Field("runtime", runtime, "String")
+    );
   }
 }

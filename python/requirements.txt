@@ -2,4 +2,3 @@ pycryptodome
 requests
 requests[security]
 python-baseconv
-

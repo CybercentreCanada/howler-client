@@ -6,10 +6,24 @@ import io.github.cybercentrecanada.howler.models.GroupedModel;
 import io.github.cybercentrecanada.howler.models.HitValidationModel;
 import io.github.cybercentrecanada.howler.models.generated.HitModel;
 import io.github.cybercentrecanada.howler.models.generated.HowlerModel;
-import io.github.cybercentrecanada.howler.requests.*;
-import io.github.cybercentrecanada.howler.responses.hit.*;
-import io.github.cybercentrecanada.howler.responses.search.*;
+import io.github.cybercentrecanada.howler.requests.FacetOptions;
+import io.github.cybercentrecanada.howler.requests.GroupSearchOptions;
+import io.github.cybercentrecanada.howler.requests.HistogramOptions;
+import io.github.cybercentrecanada.howler.requests.SearchOptions;
+import io.github.cybercentrecanada.howler.requests.StatsOptions;
+import io.github.cybercentrecanada.howler.responses.hit.CreateHitsResponse;
+import io.github.cybercentrecanada.howler.responses.hit.GetHitResponse;
+import io.github.cybercentrecanada.howler.responses.hit.ValidateHitsResponse;
+import io.github.cybercentrecanada.howler.responses.search.FacetResponse;
+import io.github.cybercentrecanada.howler.responses.search.GroupedHitSearchResponse;
+import io.github.cybercentrecanada.howler.responses.search.HistogramResponse;
+import io.github.cybercentrecanada.howler.responses.search.HitSearchResponse;
+import io.github.cybercentrecanada.howler.responses.search.IndexFieldResponse;
+import io.github.cybercentrecanada.howler.responses.search.StatsResponse;
 import com.google.common.base.Strings;
+import java.util.Base64;
+import java.util.List;
+import java.util.UUID;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.http.Header;
 import org.apache.http.message.BasicHeader;
@@ -20,10 +34,6 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
 
-import java.util.Base64;
-import java.util.List;
-import java.util.UUID;
-
 /**
  * Integration Test for Howler Client.
  */
@@ -33,8 +43,8 @@ public class HowlerClientIT {
 
     @Before
     public void init() {
-        howlerClient.initializeApiKeyAuthentication();
         MockitoAnnotations.initMocks(this);
+        howlerClient.initializeApiKeyAuthentication();
     }
 
     private String getId(HowlerClient howlerClient) {
