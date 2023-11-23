@@ -8,7 +8,6 @@ The Howler client library facilitates issuing requests to Howler.
     1. Start dependencies
     1. `howler-api > python howler/app.py`
     1. `howler-api > python howler/odm/random_data.py`
-    1. `howler-api > python howler/odm/random_hits.py`
 2. Run Java integration tests:
     1. `howler-client > mvn verify`
 3. Run python integration tests:
