@@ -22,17 +22,15 @@ long_description = read("../README.md")
 requirements = read("requirements.txt").splitlines()
 
 setup(
-    name="howler-client",
+    name="howler-client-internal",
     version=readVersion(),
-    author="Analysis Support",
-    author_email="analysis-development@cyber.gc.ca",
-    maintainer="Analysis Support",
-    maintainer_email="analysis-development@cyber.gc.ca",
-    description="Howler Client Python Library",
+    description="Howler Client - CCCS Internal Build",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="MIT",
-    url="https://github.com/CybercentreCanada/howler-client",
+    url="https://github.com/CybercentreCanada/howler-client-internal",
+    author="APA2B",
+    author_email="apa2b@cyber.gc.ca",
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         "Development Status :: 5 - Production/Stable",

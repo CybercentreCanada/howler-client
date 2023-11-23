@@ -66,7 +66,6 @@ class Connection(object):
                 }
             )
 
-
         session.verify = verify
 
         if cert:

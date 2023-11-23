@@ -5,9 +5,7 @@ echo "This will allow the test to connect to your local howler client using eith
 echo "a user/API key pair."
 echo ""
 
-
         export HOWLER_USERNAME="user"
         export HOWLER_API_KEY="devkey:user"
 
         echo "HOWLER_USERNAME and HOWLER_API_KEY set. Your tests will be run using API key authentication."
-
