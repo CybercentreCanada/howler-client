@@ -18,7 +18,15 @@ def readVersion():
         return "".join(version.read().splitlines())
 
 
-long_description = read("../README.md")
+long_description = "\n\n".join(
+    [
+        "**Le version français suit**",
+        read("../README.md"),
+        "===",
+        "# Français",
+        read("../README.fr.md"),
+    ]
+)
 requirements = read("requirements.txt").splitlines()
 
 setup(
