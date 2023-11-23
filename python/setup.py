@@ -22,7 +22,7 @@ long_description = "\n\n".join(
     [
         "**Le version français suit**",
         read("../README.md"),
-        "===",
+        "======",
         "# Français",
         read("../README.fr.md"),
     ]
@@ -30,15 +30,17 @@ long_description = "\n\n".join(
 requirements = read("requirements.txt").splitlines()
 
 setup(
-    name="howler-client-internal",
+    name="howler-client",
     version=readVersion(),
-    description="Howler Client - CCCS Internal Build",
+    author="Analysis Support",
+    author_email="analysis-development@cyber.gc.ca",
+    maintainer="Analysis Support",
+    maintainer_email="analysis-development@cyber.gc.ca",
+    description="Howler Client Python Library",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="MIT",
-    url="https://github.com/CybercentreCanada/howler-client-internal",
-    author="APA2B",
-    author_email="apa2b@cyber.gc.ca",
+    url="https://github.com/CybercentreCanada/howler-client",
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         "Development Status :: 5 - Production/Stable",
