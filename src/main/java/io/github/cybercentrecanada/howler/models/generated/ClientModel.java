@@ -26,7 +26,8 @@ public class ClientModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("ja3", ja3, "String"),
-        new Field("server_name", serverName, "String"));
+      new Field("ja3", ja3, "String"),
+      new Field("server_name", serverName, "String")
+    );
   }
 }

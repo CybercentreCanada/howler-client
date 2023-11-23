@@ -28,9 +28,10 @@ public class FeedModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("dashboard_id", dashboardId, "String"),
-        new Field("description", description, "String"),
-        new Field("name", name, "String"),
-        new Field("reference", reference, "String"));
+      new Field("dashboard_id", dashboardId, "String"),
+      new Field("description", description, "String"),
+      new Field("name", name, "String"),
+      new Field("reference", reference, "String")
+    );
   }
 }

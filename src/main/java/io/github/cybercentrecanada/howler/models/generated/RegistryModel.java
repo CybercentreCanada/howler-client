@@ -29,10 +29,11 @@ public class RegistryModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("data", data != null ? data.getFields() : null, "Class"),
-        new Field("hive", hive, "String"),
-        new Field("key", key, "String"),
-        new Field("path", path, "String"),
-        new Field("value", value, "String"));
+      new Field("data", data != null ? data.getFields() : null, "Class"),
+      new Field("hive", hive, "String"),
+      new Field("key", key, "String"),
+      new Field("path", path, "String"),
+      new Field("value", value, "String")
+    );
   }
 }

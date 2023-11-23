@@ -30,11 +30,12 @@ public class FaasModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("coldstart", coldstart, "Boolean"),
-        new Field("execution", execution, "String"),
-        new Field("id", id, "String"),
-        new Field("name", name, "String"),
-        new Field("trigger", trigger != null ? trigger.getFields() : null, "Class"),
-        new Field("version", version, "String"));
+      new Field("coldstart", coldstart, "Boolean"),
+      new Field("execution", execution, "String"),
+      new Field("id", id, "String"),
+      new Field("name", name, "String"),
+      new Field("trigger", trigger != null ? trigger.getFields() : null, "Class"),
+      new Field("version", version, "String")
+    );
   }
 }

@@ -28,9 +28,10 @@ public class OutlineModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("indicators", indicators, "List<String>"),
-        new Field("summary", summary, "String"),
-        new Field("target", target, "String"),
-        new Field("threat", threat, "String"));
+      new Field("indicators", indicators, "List<String>"),
+      new Field("summary", summary, "String"),
+      new Field("target", target, "String"),
+      new Field("threat", threat, "String")
+    );
   }
 }

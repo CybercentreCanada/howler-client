@@ -27,8 +27,9 @@ public class LinkModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("href", href, "String"),
-        new Field("icon", icon, "String"),
-        new Field("title", title, "String"));
+      new Field("href", href, "String"),
+      new Field("icon", icon, "String"),
+      new Field("title", title, "String")
+    );
   }
 }

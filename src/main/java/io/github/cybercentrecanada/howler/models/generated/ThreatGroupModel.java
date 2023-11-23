@@ -28,9 +28,10 @@ public class ThreatGroupModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("alias", alias, "List<String>"),
-        new Field("id", id, "String"),
-        new Field("name", name, "String"),
-        new Field("reference", reference, "String"));
+      new Field("alias", alias, "List<String>"),
+      new Field("id", id, "String"),
+      new Field("name", name, "String"),
+      new Field("reference", reference, "String")
+    );
   }
 }

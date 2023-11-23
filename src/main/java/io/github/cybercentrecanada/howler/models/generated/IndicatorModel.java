@@ -35,16 +35,17 @@ public class IndicatorModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("confidence", confidence, "String"),
-        new Field("description", description, "String"),
-        new Field("email", email != null ? email.getFields() : null, "Class"),
-        new Field("first_seen", firstSeen, "String"),
-        new Field("ip", ip, "String"),
-        new Field("last_seen", lastSeen, "String"),
-        new Field("provider", provider, "String"),
-        new Field("reference", reference, "String"),
-        new Field("scanner_stats", scannerStats, "Integer"),
-        new Field("sightings", sightings, "Integer"),
-        new Field("type", type, "String"));
+      new Field("confidence", confidence, "String"),
+      new Field("description", description, "String"),
+      new Field("email", email != null ? email.getFields() : null, "Class"),
+      new Field("first_seen", firstSeen, "String"),
+      new Field("ip", ip, "String"),
+      new Field("last_seen", lastSeen, "String"),
+      new Field("provider", provider, "String"),
+      new Field("reference", reference, "String"),
+      new Field("scanner_stats", scannerStats, "Integer"),
+      new Field("sightings", sightings, "Integer"),
+      new Field("type", type, "String")
+    );
   }
 }

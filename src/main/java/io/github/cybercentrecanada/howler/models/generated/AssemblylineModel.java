@@ -32,13 +32,14 @@ public class AssemblylineModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("antivirus", antivirus, "List<Class>"),
-        new Field("attribution", attribution, "List<Class>"),
-        new Field("behaviour", behaviour, "List<Class>"),
-        new Field("domain", domain, "List<Class>"),
-        new Field("heuristic", heuristic, "List<Class>"),
-        new Field("mitre", mitre != null ? mitre.getFields() : null, "Class"),
-        new Field("uri", uri, "List<Class>"),
-        new Field("yara", yara, "List<Class>"));
+      new Field("antivirus", antivirus, "List<Class>"),
+      new Field("attribution", attribution, "List<Class>"),
+      new Field("behaviour", behaviour, "List<Class>"),
+      new Field("domain", domain, "List<Class>"),
+      new Field("heuristic", heuristic, "List<Class>"),
+      new Field("mitre", mitre != null ? mitre.getFields() : null, "Class"),
+      new Field("uri", uri, "List<Class>"),
+      new Field("yara", yara, "List<Class>")
+    );
   }
 }

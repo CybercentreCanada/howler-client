@@ -25,6 +25,7 @@ public class SenderModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("address", address, "String"));
+      new Field("address", address, "String")
+    );
   }
 }

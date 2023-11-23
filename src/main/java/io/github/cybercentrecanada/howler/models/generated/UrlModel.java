@@ -38,19 +38,20 @@ public class UrlModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("domain", domain, "String"),
-        new Field("extension", extension, "String"),
-        new Field("fragment", fragment, "String"),
-        new Field("full", full, "String"),
-        new Field("original", original, "String"),
-        new Field("password", password, "String"),
-        new Field("path", path, "String"),
-        new Field("port", port, "Integer"),
-        new Field("query", query, "String"),
-        new Field("registered_domain", registeredDomain, "String"),
-        new Field("scheme", scheme, "String"),
-        new Field("subdomain", subdomain, "String"),
-        new Field("top_level_domain", topLevelDomain, "String"),
-        new Field("username", username, "String"));
+      new Field("domain", domain, "String"),
+      new Field("extension", extension, "String"),
+      new Field("fragment", fragment, "String"),
+      new Field("full", full, "String"),
+      new Field("original", original, "String"),
+      new Field("password", password, "String"),
+      new Field("path", path, "String"),
+      new Field("port", port, "Integer"),
+      new Field("query", query, "String"),
+      new Field("registered_domain", registeredDomain, "String"),
+      new Field("scheme", scheme, "String"),
+      new Field("subdomain", subdomain, "String"),
+      new Field("top_level_domain", topLevelDomain, "String"),
+      new Field("username", username, "String")
+    );
   }
 }

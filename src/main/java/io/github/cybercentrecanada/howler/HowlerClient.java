@@ -1,18 +1,30 @@
 package io.github.cybercentrecanada.howler;
 
+import static io.github.cybercentrecanada.howler.HowlerUtils.defaultStringValue;
+
 import io.github.cybercentrecanada.howler.exceptions.HowlerException;
 import io.github.cybercentrecanada.howler.models.generated.HitModel;
-import io.github.cybercentrecanada.howler.requests.*;
-import io.github.cybercentrecanada.howler.responses.hit.*;
-import io.github.cybercentrecanada.howler.responses.search.*;
+import io.github.cybercentrecanada.howler.requests.FacetOptions;
+import io.github.cybercentrecanada.howler.requests.GroupSearchOptions;
+import io.github.cybercentrecanada.howler.requests.HistogramOptions;
+import io.github.cybercentrecanada.howler.requests.SearchOptions;
+import io.github.cybercentrecanada.howler.requests.StatsOptions;
+import io.github.cybercentrecanada.howler.responses.hit.CreateHitsResponse;
+import io.github.cybercentrecanada.howler.responses.hit.DeleteHitsResponse;
+import io.github.cybercentrecanada.howler.responses.hit.GetHitResponse;
+import io.github.cybercentrecanada.howler.responses.hit.ValidateHitsResponse;
+import io.github.cybercentrecanada.howler.responses.search.FacetResponse;
+import io.github.cybercentrecanada.howler.responses.search.GroupedHitSearchResponse;
+import io.github.cybercentrecanada.howler.responses.search.HistogramResponse;
+import io.github.cybercentrecanada.howler.responses.search.HitSearchResponse;
+import io.github.cybercentrecanada.howler.responses.search.IndexFieldResponse;
+import io.github.cybercentrecanada.howler.responses.search.StatsResponse;
 import com.google.common.base.Strings;
+import java.util.Base64;
+import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.Header;
 import org.apache.http.message.BasicHeader;
-import java.util.Base64;
-import java.util.List;
-
-import static io.github.cybercentrecanada.howler.HowlerUtils.defaultStringValue;
 
 @Slf4j
 public class HowlerClient implements Howler {
@@ -66,8 +78,8 @@ public class HowlerClient implements Howler {
                                     .encodeToString(String.format("%s:%s", userName, apiKey).getBytes())),
             };
         } else {
-            throw new HowlerException(
-                    "Authentication not initialized! Call initializeApiKeyAuthentication.");
+            String errorMessage = "Authentication not initialized! Call initializeApiKeyAuthentication.";
+            throw new HowlerException(errorMessage);
         }
     }
 

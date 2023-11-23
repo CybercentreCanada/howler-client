@@ -32,13 +32,14 @@ public class LabelsModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("assignments", assignments, "List<String>"),
-        new Field("campaign", campaign, "List<String>"),
-        new Field("generic", generic, "List<String>"),
-        new Field("insight", insight, "List<String>"),
-        new Field("mitigation", mitigation, "List<String>"),
-        new Field("operation", operation, "List<String>"),
-        new Field("threat", threat, "List<String>"),
-        new Field("victim", victim, "List<String>"));
+      new Field("assignments", assignments, "List<String>"),
+      new Field("campaign", campaign, "List<String>"),
+      new Field("generic", generic, "List<String>"),
+      new Field("insight", insight, "List<String>"),
+      new Field("mitigation", mitigation, "List<String>"),
+      new Field("operation", operation, "List<String>"),
+      new Field("threat", threat, "List<String>"),
+      new Field("victim", victim, "List<String>")
+    );
   }
 }

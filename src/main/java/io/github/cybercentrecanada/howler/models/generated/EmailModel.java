@@ -40,21 +40,22 @@ public class EmailModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("attachments", attachments, "List<Class>"),
-        new Field("bcc", bcc != null ? bcc.getFields() : null, "Class"),
-        new Field("cc", cc != null ? cc.getFields() : null, "Class"),
-        new Field("content_type", contentType, "String"),
-        new Field("delivery_timestamp", deliveryTimestamp, "String"),
-        new Field("direction", direction, "String"),
-        new Field("from", from != null ? from.getFields() : null, "Class"),
-        new Field("local_id", localId, "String"),
-        new Field("message_id", messageId, "String"),
-        new Field("origination_timestamp", originationTimestamp, "String"),
-        new Field("parent", parent != null ? parent.getFields() : null, "Class"),
-        new Field("reply_to", replyTo != null ? replyTo.getFields() : null, "Class"),
-        new Field("sender", sender != null ? sender.getFields() : null, "Class"),
-        new Field("subject", subject, "String"),
-        new Field("to", to != null ? to.getFields() : null, "Class"),
-        new Field("x_mailer", xMailer, "String"));
+      new Field("attachments", attachments, "List<Class>"),
+      new Field("bcc", bcc != null ? bcc.getFields() : null, "Class"),
+      new Field("cc", cc != null ? cc.getFields() : null, "Class"),
+      new Field("content_type", contentType, "String"),
+      new Field("delivery_timestamp", deliveryTimestamp, "String"),
+      new Field("direction", direction, "String"),
+      new Field("from", from != null ? from.getFields() : null, "Class"),
+      new Field("local_id", localId, "String"),
+      new Field("message_id", messageId, "String"),
+      new Field("origination_timestamp", originationTimestamp, "String"),
+      new Field("parent", parent != null ? parent.getFields() : null, "Class"),
+      new Field("reply_to", replyTo != null ? replyTo.getFields() : null, "Class"),
+      new Field("sender", sender != null ? sender.getFields() : null, "Class"),
+      new Field("subject", subject, "String"),
+      new Field("to", to != null ? to.getFields() : null, "Class"),
+      new Field("x_mailer", xMailer, "String")
+    );
   }
 }

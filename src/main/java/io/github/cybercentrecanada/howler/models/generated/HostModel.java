@@ -30,11 +30,12 @@ public class HostModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("domain", domain, "String"),
-        new Field("id", id, "String"),
-        new Field("ip", ip, "List<String>"),
-        new Field("mac", mac, "List<String>"),
-        new Field("name", name, "String"),
-        new Field("type", type, "String"));
+      new Field("domain", domain, "String"),
+      new Field("id", id, "String"),
+      new Field("ip", ip, "List<String>"),
+      new Field("mac", mac, "List<String>"),
+      new Field("name", name, "String"),
+      new Field("type", type, "String")
+    );
   }
 }

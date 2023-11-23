@@ -33,14 +33,15 @@ public class CloudModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("account", account != null ? account.getFields() : null, "Class"),
-        new Field("availability_zone", availabilityZone, "String"),
-        new Field("instance", instance != null ? instance.getFields() : null, "Class"),
-        new Field("machine", machine != null ? machine.getFields() : null, "Class"),
-        new Field("project", project != null ? project.getFields() : null, "Class"),
-        new Field("provider", provider, "String"),
-        new Field("region", region, "String"),
-        new Field("service", service != null ? service.getFields() : null, "Class"),
-        new Field("tenant_id", tenantId, "String"));
+      new Field("account", account != null ? account.getFields() : null, "Class"),
+      new Field("availability_zone", availabilityZone, "String"),
+      new Field("instance", instance != null ? instance.getFields() : null, "Class"),
+      new Field("machine", machine != null ? machine.getFields() : null, "Class"),
+      new Field("project", project != null ? project.getFields() : null, "Class"),
+      new Field("provider", provider, "String"),
+      new Field("region", region, "String"),
+      new Field("service", service != null ? service.getFields() : null, "Class"),
+      new Field("tenant_id", tenantId, "String")
+    );
   }
 }

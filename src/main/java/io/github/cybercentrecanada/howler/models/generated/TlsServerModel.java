@@ -25,6 +25,7 @@ public class TlsServerModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("ja3s", ja3s, "String"));
+      new Field("ja3s", ja3s, "String")
+    );
   }
 }

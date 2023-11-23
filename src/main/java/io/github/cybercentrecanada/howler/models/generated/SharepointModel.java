@@ -26,7 +26,8 @@ public class SharepointModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("created", created != null ? created.getFields() : null, "Class"),
-        new Field("modified", modified != null ? modified.getFields() : null, "Class"));
+      new Field("created", created != null ? created.getFields() : null, "Class"),
+      new Field("modified", modified != null ? modified.getFields() : null, "Class")
+    );
   }
 }

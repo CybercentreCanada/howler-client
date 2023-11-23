@@ -38,19 +38,20 @@ public class ProcessParentModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("args", args, "List<String>"),
-        new Field("args_count", argsCount, "Integer"),
-        new Field("command_line", commandLine, "String"),
-        new Field("end", end, "String"),
-        new Field("entity_id", entityId, "String"),
-        new Field("env_vars", envVars, "Map<String, String>"),
-        new Field("executable", executable, "String"),
-        new Field("exit_code", exitCode, "Integer"),
-        new Field("interactive", interactive, "Boolean"),
-        new Field("name", name, "String"),
-        new Field("pid", pid, "Integer"),
-        new Field("same_as_process", sameAsProcess, "Boolean"),
-        new Field("start", start, "String"),
-        new Field("user", user != null ? user.getFields() : null, "Class"));
+      new Field("args", args, "List<String>"),
+      new Field("args_count", argsCount, "Integer"),
+      new Field("command_line", commandLine, "String"),
+      new Field("end", end, "String"),
+      new Field("entity_id", entityId, "String"),
+      new Field("env_vars", envVars, "Map<String, String>"),
+      new Field("executable", executable, "String"),
+      new Field("exit_code", exitCode, "Integer"),
+      new Field("interactive", interactive, "Boolean"),
+      new Field("name", name, "String"),
+      new Field("pid", pid, "Integer"),
+      new Field("same_as_process", sameAsProcess, "Boolean"),
+      new Field("start", start, "String"),
+      new Field("user", user != null ? user.getFields() : null, "Class")
+    );
   }
 }

@@ -35,16 +35,17 @@ public class GeoModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("city_name", cityName, "String"),
-        new Field("continent_code", continentCode, "String"),
-        new Field("continent_name", continentName, "String"),
-        new Field("country_iso_code", countryIsoCode, "String"),
-        new Field("country_name", countryName, "String"),
-        new Field("location", location != null ? location.getFields() : null, "Class"),
-        new Field("name", name, "String"),
-        new Field("postal_code", postalCode, "String"),
-        new Field("region_iso_code", regionIsoCode, "String"),
-        new Field("region_name", regionName, "String"),
-        new Field("timezone", timezone, "String"));
+      new Field("city_name", cityName, "String"),
+      new Field("continent_code", continentCode, "String"),
+      new Field("continent_name", continentName, "String"),
+      new Field("country_iso_code", countryIsoCode, "String"),
+      new Field("country_name", countryName, "String"),
+      new Field("location", location != null ? location.getFields() : null, "Class"),
+      new Field("name", name, "String"),
+      new Field("postal_code", postalCode, "String"),
+      new Field("region_iso_code", regionIsoCode, "String"),
+      new Field("region_name", regionName, "String"),
+      new Field("timezone", timezone, "String")
+    );
   }
 }

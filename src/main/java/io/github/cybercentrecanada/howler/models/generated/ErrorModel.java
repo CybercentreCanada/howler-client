@@ -26,7 +26,8 @@ public class ErrorModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("code", code, "String"),
-        new Field("message", message, "String"));
+      new Field("code", code, "String"),
+      new Field("message", message, "String")
+    );
   }
 }

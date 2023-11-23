@@ -42,23 +42,24 @@ public class ProcessModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("args", args, "List<String>"),
-        new Field("args_count", argsCount, "Integer"),
-        new Field("command_line", commandLine, "String"),
-        new Field("end", end, "String"),
-        new Field("entity_id", entityId, "String"),
-        new Field("env_vars", envVars, "Map<String, String>"),
-        new Field("executable", executable, "String"),
-        new Field("exit_code", exitCode, "Integer"),
-        new Field("interactive", interactive, "Boolean"),
-        new Field("name", name, "String"),
-        new Field("parent", parent, "List<Class>"),
-        new Field("pid", pid, "Integer"),
-        new Field("same_as_process", sameAsProcess, "Boolean"),
-        new Field("start", start, "String"),
-        new Field("title", title, "String"),
-        new Field("uptime", uptime, "Integer"),
-        new Field("user", user != null ? user.getFields() : null, "Class"),
-        new Field("working_directory", workingDirectory, "String"));
+      new Field("args", args, "List<String>"),
+      new Field("args_count", argsCount, "Integer"),
+      new Field("command_line", commandLine, "String"),
+      new Field("end", end, "String"),
+      new Field("entity_id", entityId, "String"),
+      new Field("env_vars", envVars, "Map<String, String>"),
+      new Field("executable", executable, "String"),
+      new Field("exit_code", exitCode, "Integer"),
+      new Field("interactive", interactive, "Boolean"),
+      new Field("name", name, "String"),
+      new Field("parent", parent, "List<Class>"),
+      new Field("pid", pid, "Integer"),
+      new Field("same_as_process", sameAsProcess, "Boolean"),
+      new Field("start", start, "String"),
+      new Field("title", title, "String"),
+      new Field("uptime", uptime, "Integer"),
+      new Field("user", user != null ? user.getFields() : null, "Class"),
+      new Field("working_directory", workingDirectory, "String")
+    );
   }
 }

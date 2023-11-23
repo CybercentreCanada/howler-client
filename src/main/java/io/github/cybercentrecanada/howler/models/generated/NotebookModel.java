@@ -29,10 +29,11 @@ public class NotebookModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("detection", detection, "String"),
-        new Field("id", id, "String"),
-        new Field("name", name, "String"),
-        new Field("user", user, "String"),
-        new Field("value", value, "String"));
+      new Field("detection", detection, "String"),
+      new Field("id", id, "String"),
+      new Field("name", name, "String"),
+      new Field("user", user, "String"),
+      new Field("value", value, "String")
+    );
   }
 }

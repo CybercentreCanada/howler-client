@@ -26,7 +26,8 @@ public class MitreModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("tactic", tactic, "List<Class>"),
-        new Field("technique", technique, "List<Class>"));
+      new Field("tactic", tactic, "List<Class>"),
+      new Field("technique", technique, "List<Class>")
+    );
   }
 }

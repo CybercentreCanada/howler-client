@@ -30,11 +30,12 @@ public class RequestModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("body", body != null ? body.getFields() : null, "Class"),
-        new Field("bytes", bytes, "Integer"),
-        new Field("id", id, "String"),
-        new Field("method", method, "String"),
-        new Field("mime_type", mimeType, "String"),
-        new Field("referrer", referrer, "String"));
+      new Field("body", body != null ? body.getFields() : null, "Class"),
+      new Field("bytes", bytes, "Integer"),
+      new Field("id", id, "String"),
+      new Field("method", method, "String"),
+      new Field("mime_type", mimeType, "String"),
+      new Field("referrer", referrer, "String")
+    );
   }
 }

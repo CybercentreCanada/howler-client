@@ -27,8 +27,9 @@ public class VotesModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("benign", benign, "List<String>"),
-        new Field("malicious", malicious, "List<String>"),
-        new Field("obscure", obscure, "List<String>"));
+      new Field("benign", benign, "List<String>"),
+      new Field("malicious", malicious, "List<String>"),
+      new Field("obscure", obscure, "List<String>")
+    );
   }
 }

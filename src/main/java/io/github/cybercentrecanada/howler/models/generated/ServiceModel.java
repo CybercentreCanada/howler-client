@@ -25,6 +25,7 @@ public class ServiceModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("name", name, "String"));
+      new Field("name", name, "String")
+    );
   }
 }

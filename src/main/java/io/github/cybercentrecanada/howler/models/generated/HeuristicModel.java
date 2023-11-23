@@ -28,9 +28,10 @@ public class HeuristicModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("subtype", subtype, "String"),
-        new Field("type", type, "String"),
-        new Field("value", value, "String"),
-        new Field("verdict", verdict, "String"));
+      new Field("subtype", subtype, "String"),
+      new Field("type", type, "String"),
+      new Field("value", value, "String"),
+      new Field("verdict", verdict, "String")
+    );
   }
 }

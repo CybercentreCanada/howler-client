@@ -26,7 +26,8 @@ public class AwsModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("account", account != null ? account.getFields() : null, "Class"),
-        new Field("organization", organization != null ? organization.getFields() : null, "Class"));
+      new Field("account", account != null ? account.getFields() : null, "Class"),
+      new Field("organization", organization != null ? organization.getFields() : null, "Class")
+    );
   }
 }

@@ -26,7 +26,8 @@ public class OperationModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("data", data, "Map<String, String>"),
-        new Field("operation_id", operationId, "String"));
+      new Field("data", data, "Map<String, String>"),
+      new Field("operation_id", operationId, "String")
+    );
   }
 }

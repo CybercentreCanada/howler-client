@@ -26,7 +26,8 @@ public class ModifiedModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("application", application, "String"),
-        new Field("user", user, "String"));
+      new Field("application", application, "String"),
+      new Field("user", user, "String")
+    );
   }
 }

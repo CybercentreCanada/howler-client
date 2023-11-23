@@ -32,13 +32,14 @@ public class PeModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("architecture", architecture, "String"),
-        new Field("company", company, "String"),
-        new Field("description", description, "String"),
-        new Field("file_version", fileVersion, "String"),
-        new Field("imphash", imphash, "String"),
-        new Field("original_file_name", originalFileName, "String"),
-        new Field("pehash", pehash, "String"),
-        new Field("product", product, "String"));
+      new Field("architecture", architecture, "String"),
+      new Field("company", company, "String"),
+      new Field("description", description, "String"),
+      new Field("file_version", fileVersion, "String"),
+      new Field("imphash", imphash, "String"),
+      new Field("original_file_name", originalFileName, "String"),
+      new Field("pehash", pehash, "String"),
+      new Field("product", product, "String")
+    );
   }
 }

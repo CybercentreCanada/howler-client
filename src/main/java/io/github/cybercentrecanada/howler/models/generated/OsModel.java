@@ -31,12 +31,13 @@ public class OsModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("family", family, "String"),
-        new Field("full", full, "String"),
-        new Field("kernel", kernel, "String"),
-        new Field("name", name, "String"),
-        new Field("platform", platform, "String"),
-        new Field("type", type, "String"),
-        new Field("version", version, "String"));
+      new Field("family", family, "String"),
+      new Field("full", full, "String"),
+      new Field("kernel", kernel, "String"),
+      new Field("name", name, "String"),
+      new Field("platform", platform, "String"),
+      new Field("type", type, "String"),
+      new Field("version", version, "String")
+    );
   }
 }

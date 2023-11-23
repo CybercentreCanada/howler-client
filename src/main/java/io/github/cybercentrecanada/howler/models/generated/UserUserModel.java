@@ -34,15 +34,16 @@ public class UserUserModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("api_quota", apiQuota, "Integer"),
-        new Field("classification", classification, "String"),
-        new Field("email", email, "String"),
-        new Field("favourite_views", favouriteViews, "List<String>"),
-        new Field("groups", groups, "List<String>"),
-        new Field("is_active", isActive, "Boolean"),
-        new Field("name", name, "String"),
-        new Field("password", password, "String"),
-        new Field("type", type, "List<String>"),
-        new Field("uname", uname, "String"));
+      new Field("api_quota", apiQuota, "Integer"),
+      new Field("classification", classification, "String"),
+      new Field("email", email, "String"),
+      new Field("favourite_views", favouriteViews, "List<String>"),
+      new Field("groups", groups, "List<String>"),
+      new Field("is_active", isActive, "Boolean"),
+      new Field("name", name, "String"),
+      new Field("password", password, "String"),
+      new Field("type", type, "List<String>"),
+      new Field("uname", uname, "String")
+    );
   }
 }

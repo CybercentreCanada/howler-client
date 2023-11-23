@@ -31,12 +31,13 @@ public class RelatedModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("hash", hash, "List<String>"),
-        new Field("hosts", hosts, "List<String>"),
-        new Field("id", id, "String"),
-        new Field("ip", ip, "List<String>"),
-        new Field("signature", signature, "List<String>"),
-        new Field("uri", uri, "List<String>"),
-        new Field("user", user, "List<String>"));
+      new Field("hash", hash, "List<String>"),
+      new Field("hosts", hosts, "List<String>"),
+      new Field("id", id, "String"),
+      new Field("ip", ip, "List<String>"),
+      new Field("signature", signature, "List<String>"),
+      new Field("uri", uri, "List<String>"),
+      new Field("user", user, "List<String>")
+    );
   }
 }

@@ -27,8 +27,9 @@ public class GroupModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("domain", domain, "String"),
-        new Field("id", id, "String"),
-        new Field("name", name, "String"));
+      new Field("domain", domain, "String"),
+      new Field("id", id, "String"),
+      new Field("name", name, "String")
+    );
   }
 }

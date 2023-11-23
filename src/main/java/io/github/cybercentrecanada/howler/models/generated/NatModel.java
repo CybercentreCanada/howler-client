@@ -26,7 +26,8 @@ public class NatModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("ip", ip, "String"),
-        new Field("port", port, "Integer"));
+      new Field("ip", ip, "String"),
+      new Field("port", port, "Integer")
+    );
   }
 }

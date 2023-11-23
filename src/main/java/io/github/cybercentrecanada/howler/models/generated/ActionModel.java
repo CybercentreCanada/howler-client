@@ -29,10 +29,11 @@ public class ActionModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("action_id", actionId, "String"),
-        new Field("name", name, "String"),
-        new Field("operations", operations, "List<Class>"),
-        new Field("query", query, "String"),
-        new Field("triggers", triggers, "List<String>"));
+      new Field("action_id", actionId, "String"),
+      new Field("name", name, "String"),
+      new Field("operations", operations, "List<Class>"),
+      new Field("query", query, "String"),
+      new Field("triggers", triggers, "List<String>")
+    );
   }
 }

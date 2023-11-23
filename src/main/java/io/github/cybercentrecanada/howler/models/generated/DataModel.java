@@ -27,8 +27,9 @@ public class DataModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("bytes", bytes, "String"),
-        new Field("strings", strings, "List<String>"),
-        new Field("type", type, "String"));
+      new Field("bytes", bytes, "String"),
+      new Field("strings", strings, "List<String>"),
+      new Field("type", type, "String")
+    );
   }
 }

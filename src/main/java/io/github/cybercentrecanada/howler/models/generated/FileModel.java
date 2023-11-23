@@ -29,10 +29,11 @@ public class FileModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("extension", extension, "String"),
-        new Field("hash", hash != null ? hash.getFields() : null, "Class"),
-        new Field("mime_type", mimeType, "String"),
-        new Field("name", name, "String"),
-        new Field("size", size, "Integer"));
+      new Field("extension", extension, "String"),
+      new Field("hash", hash != null ? hash.getFields() : null, "Class"),
+      new Field("mime_type", mimeType, "String"),
+      new Field("name", name, "String"),
+      new Field("size", size, "Integer")
+    );
   }
 }

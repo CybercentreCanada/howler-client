@@ -29,10 +29,11 @@ public class ViewModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("owner", owner, "String"),
-        new Field("query", query, "String"),
-        new Field("title", title, "String"),
-        new Field("type", type, "String"),
-        new Field("view_id", viewId, "String"));
+      new Field("owner", owner, "String"),
+      new Field("query", query, "String"),
+      new Field("title", title, "String"),
+      new Field("type", type, "String"),
+      new Field("view_id", viewId, "String")
+    );
   }
 }

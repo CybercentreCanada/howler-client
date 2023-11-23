@@ -20,7 +20,7 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HeaderModel implements GeneratedModel {
   String abiVersion;
-  @JsonProperty("class")
+    @JsonProperty("class")
   String klass;
   String data;
   Integer entrypoint;
@@ -33,13 +33,14 @@ public class HeaderModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("abi_version", abiVersion, "String"),
-        new Field("class", klass, "String"),
-        new Field("data", data, "String"),
-        new Field("entrypoint", entrypoint, "Integer"),
-        new Field("object_version", objectVersion, "String"),
-        new Field("os_abi", osAbi, "String"),
-        new Field("type", type, "String"),
-        new Field("version", version, "String"));
+      new Field("abi_version", abiVersion, "String"),
+      new Field("class", klass, "String"),
+      new Field("data", data, "String"),
+      new Field("entrypoint", entrypoint, "Integer"),
+      new Field("object_version", objectVersion, "String"),
+      new Field("os_abi", osAbi, "String"),
+      new Field("type", type, "String"),
+      new Field("version", version, "String")
+    );
   }
 }

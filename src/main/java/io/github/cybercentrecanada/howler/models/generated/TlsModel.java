@@ -28,9 +28,10 @@ public class TlsModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("client", client != null ? client.getFields() : null, "Class"),
-        new Field("server", server != null ? server.getFields() : null, "Class"),
-        new Field("version", version, "String"),
-        new Field("version_protocol", versionProtocol, "String"));
+      new Field("client", client != null ? client.getFields() : null, "Class"),
+      new Field("server", server != null ? server.getFields() : null, "Class"),
+      new Field("version", version, "String"),
+      new Field("version_protocol", versionProtocol, "String")
+    );
   }
 }

@@ -25,6 +25,7 @@ public class SpellbookModel implements GeneratedModel {
   @JsonIgnore
   public List<Field> getFields() {
     return List.of(
-        new Field("dag_ids", dagIds, "List<String>"));
+      new Field("dag_ids", dagIds, "List<String>")
+    );
   }
 }
