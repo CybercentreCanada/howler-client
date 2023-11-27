@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.cybercentrecanada</groupId>
   <artifactId>howler-client</artifactId>
-  <version>1.6.0-SNAPSHOT</version>
+  <version>1.6.0</version>
   <name>howler-client</name>
   <description>A Java library to aid interaction with Howler.</description>
   <url>https://github.com/CybercentreCanada/howler-client</url>
