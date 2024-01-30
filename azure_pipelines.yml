@@ -45,7 +45,6 @@ stages:
             inputs:
               versionSpec: "3.9"
           - script: |
-              cd python
               python -m venv venv
               . ./venv/bin/activate
               python -m pip install --upgrade pip
@@ -55,7 +54,6 @@ stages:
             displayName: Install howler-client
             workingDirectory: $(Pipeline.Workspace)/s
           - script: |
-              cd python
               . ./venv/bin/activate
               python -m howler.app &
               pytest -rsx -vv test/unit
@@ -72,9 +70,8 @@ stages:
             inputs:
               versionSpec: "3.9"
           - script: |
-              cd python
-              virtualenv -p python$(pythonVersion) env
-              source env/bin/activate
+              python -m venv venv
+              . ./venv/bin/activate
               pip install wheel
               pip install -r requirements.txt
               echo '.$(tag)' >> version.txt
