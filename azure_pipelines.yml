@@ -88,7 +88,7 @@ stages:
             displayName: "Stage build artifact to publish"
           - task: PublishBuildArtifacts@1
             inputs:
-              pathtoPublish: "$(Build.ArtifactStagingDirectory)/python/dist"
+              pathtoPublish: "$(Build.ArtifactStagingDirectory)/dist"
               artifactName: "howler_client"
               publishLocation: "Container"
             displayName: Publish build artifacts
