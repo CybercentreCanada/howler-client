@@ -1,7 +1,0 @@
-package io.github.cybercentrecanada.howler.responses.hit;
-
-import io.github.cybercentrecanada.howler.models.HitValidationModel;
-import io.github.cybercentrecanada.howler.responses.HowlerResponse;
-
-public class ValidateHitsResponse extends HowlerResponse<HitValidationModel> {
-}
