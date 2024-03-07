@@ -28,7 +28,8 @@ variables:
   isPrBranch: $[eq(variables['Build.SourceBranchName'], 'merge')]
   pythonVersion: "3.9"
 
-pool: "stratus-build-pool.u"
+pool:
+  vmImage: "ubuntu-latest"
 
 stages:
   - stage: test
