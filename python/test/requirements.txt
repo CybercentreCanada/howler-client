@@ -1,5 +1,4 @@
 pytest
 pytest-cov
-howler-api
 passlib
 assemblyline_client
