@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING, Any, Literal, Optional, Union
 from howler_client.common.dict_utils import flatten
 from howler_client.common.utils import ClientError, api_path
 from howler_client.logger import get_logger
+from howler_client.module.comment import Comment
 
 if TYPE_CHECKING:
     from howler_client import Connection
@@ -39,6 +40,7 @@ class Hit(object):
     def __init__(self, connection: "Connection", search: "Search"):
         self._connection: "Connection" = connection
         self._search: "Search" = search
+        self.comment: "Comment" = Comment(connection)
 
     def __call__(self, hit_id: str) -> dict[str, Any]:
         """Return the hit for a given ID
@@ -204,7 +206,7 @@ class Hit(object):
             raise TypeError("Updates must be of type list.")
 
         for update in updates:
-            if not isinstance(updates, tuple):
+            if not isinstance(update, tuple):
                 raise TypeError("Entries in updates must be of type tuple.")
 
             if update[0] not in UPDATE_OPERATIONS:
@@ -231,7 +233,7 @@ class Hit(object):
             raise TypeError("Updates must be of type list.")
 
         for update in updates:
-            if not isinstance(updates, tuple):
+            if not isinstance(update, tuple):
                 raise TypeError("Entries in updates must be of type tuple.")
             if update[0] not in UPDATE_OPERATIONS:
                 raise ClientError(

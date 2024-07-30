@@ -1,13 +1,11 @@
 import datetime
-import os
 import time
 
 import pytest
+from utils import create_and_get_comment, random_hash
 
 from howler_client.client import Client
 from howler_client.common.utils import ClientError
-from howler_client.module.hit import UPDATE_INC, UPDATE_SET
-from utils import random_hash
 
 TOOL_NAME = "test"
 
@@ -18,7 +16,7 @@ MAP = {
     "dest_ip": ["destination.ip", "related.ip"],
     "time.created": ["event.start"],
     "time.completed": ["event.end"],
-    "cloud.availability_zone": ["cloud.availability_zone"]
+    "cloud.availability_zone": ["cloud.availability_zone"],
     # TODO: Uncomment this once ignore extra values is permitted
     # "additional_field": ["additional_field"],
 }
@@ -48,7 +46,7 @@ HITS = [
         "time": {
             "created": datetime.datetime(2022, 5, 17).isoformat() + "Z",
             "completed": datetime.datetime(2022, 9, 18).isoformat() + "Z",
-        }
+        },
         # TODO: Uncomment this once ignore extra values is permitted
         # "additional_field": "additional_value",
     },
@@ -205,6 +203,67 @@ def test_create_invalid(caplog, client: Client):
             e.api_response["invalid"][0]["error"]
             == "[hit.howler.score]: value is missing from the object!"
         )
+
+
+def test_add_comment(client: Client):
+    result, comment = create_and_get_comment(
+        client, "this is a very unique test comment"
+    )
+
+    assert comment is not None
+
+    result["howler"]["log"][len(result["howler"]["log"]) - 1][
+        "explanation"
+    ] == "Hit updated by admin"
+
+
+def test_update_comment(client: Client):
+    result, comment = create_and_get_comment(
+        client, "this is a very unique test comment made by me"
+    )
+
+    comment_value = "this comment was updated by the howler-client."
+
+    result = client.hit.comment.edit(
+        result["howler"]["id"],
+        comment_value,
+        comment["id"],
+    )
+
+    comment = next(
+        (c for c in result["howler"]["comment"] if c["value"] == comment_value), None
+    )
+
+    assert comment is not None
+
+    result["howler"]["log"][len(result["howler"]["log"]) - 1][
+        "explanation"
+    ] == "Hit updated by admin"
+
+
+def test_delete_comment(client: Client):
+    comment_value = (
+        "this is a very unique test comment made by me that's going to be deleted"
+    )
+    result, comment = create_and_get_comment(client, comment_value)
+    comments_count = len(result["howler"]["comment"])
+
+    result = client.hit.comment.delete(
+        result["howler"]["id"],
+        [comment["id"]],
+    )
+
+    comment = next(
+        (c for c in result["howler"]["comment"] if c["value"] == comment_value), None
+    )
+    comments_count = comments_count - len(result["howler"]["comment"])
+
+    assert comment is None
+    assert comments_count == 1
+
+    result["howler"]["log"][len(result["howler"]["log"]) - 1][
+        "explanation"
+    ] == "Hit updated by admin"
 
 
 def test_update(client: Client):

@@ -35,6 +35,7 @@ class Connection(object):
         timeout,
         throw_on_bad_request,
         throw_on_max_retries,
+        token,
     ):
         self.auth = auth
         self.apikey = apikey
@@ -46,6 +47,7 @@ class Connection(object):
         self.default_timeout = timeout
         self.throw_on_bad_request = throw_on_bad_request
         self.throw_on_max_retries = throw_on_max_retries
+        self.token = token
 
         session = requests.Session()
 
